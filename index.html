@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="05fc475c-24d0-4993-bade-7819d1014664" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb" style="object-position:center 37.92%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🎓</span></div><h1 class="page-title">Portfolio</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="0708ff0d-bf82-4935-9024-dfeee011125a"><div style="font-size:1.5em"><span class="icon">✏️</span></div><div style="width:100%">👋 Hello, my name is Paulo Guilherme Pilotti Duarte
+👀 I have interest in linguistics, arts, translation, education, AI and pedagogy.<h1 id="1f2b0e5e-84aa-4224-a523-9928a0643a15" class="block-color-yellow_background">Paulo Guilherme Pilotti Duarte</h1><p id="2675a2ea-4325-45e5-a77f-12b5cec85efd" class="">🎨 Technical Writer &amp; Translator</p><p id="2207595e-849c-449e-8668-b20aa851af34" class="">📅 1st January of 1983</p><p id="bc95c905-5e48-4c24-9a6d-7c3971996562" class="">☎+55 51 936189152</p><p id="ef3112bc-94b9-4828-ab69-6d4b3bfd03e2" class="">📧 guilhermepilotti@gmail.com</p><p id="10d1190b-cae8-4c01-8f5d-bdf59105823f" class="">📰 <a href="https://www.linkedin.com/in/paulogpd/">Linkedin</a></p><p id="1fe13ee2-dae9-4d0d-8b6d-289e3a1664ca" class="">🖥 <a href="https://github.com/mtgr18977">GitHub</a> (personal projects)</p><p id="da6cfd2e-808f-4f10-baee-2d0a16df4c40" class="">🖥 <a href="https://paulopilotti.itch.io/">icth.io</a> (games)</p></div></figure><p id="51d9bacc-674f-416c-b468-d84434d1a2d3" class="">
+</p><div id="5fe0b20e-bea1-4bb6-b608-a203feff9fa9" class="column-list"><div id="e03401b5-7180-4906-a413-5b5c2f4d428e" style="width:75%" class="column"><h3 id="d8090366-7bee-42ff-bd27-8973b3dc867e" class="">👨‍🎓 <span style="border-bottom:0.05em solid">ABOUT ME</span></h3><p id="91963d80-70b2-4d2e-80a3-016fae91d327" class="">
+</p><ul id="5180a46e-1ec5-4443-8e59-cfdb708ec615" class="bulleted-list"><li style="list-style-type:disc"><strong>Experience</strong> : 10+ years of experience as linguistics consultant for UX fields. 10 years of experience with web
+development with emphases on back end PHP development and natural language processing.</li></ul><ul id="aee849e1-c233-471e-8869-478297976f19" class="bulleted-list"><li style="list-style-type:disc"><strong>Responsibilities</strong> : Involved in all phases of web development, such as <em>UML</em> modelling, requisites gathering, MySQL
+databases creation, front and back end development and interfaces translation and review.</li></ul><ul id="d04ce267-0986-4e3a-94a5-9f4c6e5149fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Testing</strong>: experience in testing methodologies like integration, regression, system, user acceptance testing (UAT) and interface testing.</li></ul><ul id="1519672a-3167-43a8-9ef8-d61dfc3aa1b7" class="bulleted-list"><li style="list-style-type:disc"><strong>Gaming development experience</strong> : Experience with game development using Unity3D for Windows and mobile.</li></ul><ul id="b87f215c-f624-4372-a8cf-22f1ccf4312a" class="bulleted-list"><li style="list-style-type:disc"><strong>Other information</strong> : Approximately 4 years of experience with teaching Mathematics, English and Programming. 2 years as assistant teacher for the introductory courses of programming @ Informatics Institute from UFRGS.</li></ul><h2 id="81ea3f92-dbd6-4d4f-9e57-139c7a26b959" class="">Professional Experience</h2><p id="aa92bb8c-6654-4d83-b8bf-4544e7c52745" class="">💻 Technical Writer @ senhasegura : Since Jun/23</p><p id="32df2c46-e096-4137-b926-3aaac205b904" class="">💻 Technical Writer @ Azion Tech : Since Jul/22 ~ May/23</p><p id="ea023862-5b1f-4728-baf9-6166f38e3383" class="">💻 Technical Writer and Translator @Me : 2011 ~ 2022</p><p id="cb21b9ed-de52-4e9b-8743-5a871e83fce7" class="">💻 Researcher for NLP @ Terminsul : Mar/11 ~ Nov/14</p><h2 id="87f746a5-662f-4c61-ab82-23f556903ebb" class="">Education</h2><p id="6200980d-2477-487d-aafa-ac641b80881b" class="">🎓 Educational degree in Mathematics, Faculdades Estácio - 2021 ~ 2024 (predict)</p><p id="294dd47d-9d6b-439b-9d4d-010b5921030b" class="">🎓 Bachelor in English, Federal University of Rio Grande do Sul - 2011 ~ 2016</p><p id="d57d019f-4366-4dfb-a360-eacb5878ab75" class="">🎓 Specialization at Full Stack Development, Anhanguera - 2022</p><h2 id="ec1b5bf5-0ad1-4378-9364-577fb85dc20f" class="">Skills</h2><p id="22d531bc-5e6b-4266-b7b1-b3cbed613fac" class="">😎 Speaks English (very well)</p><h3 id="bf8f2996-e511-47b7-8a48-3d4b6c88158b" class="">📚 SKILLS</h3><div id="14be1514-013a-40f4-ac12-6fe9da04ba0d" class="column-list"><div id="b97f1dac-aca3-47e9-9cd4-6f0a82ac5149" style="width:100%" class="column"><blockquote id="ed4b765a-8f89-4aa3-a120-d1ce0dcac8cb" class="block-color-pink_background">Java Script</blockquote><blockquote id="d23c95d5-63b5-4727-bab7-77605400a340" class="block-color-pink_background">MS SQL</blockquote><blockquote id="91cc6610-1987-498e-8960-b818db0fb6e8" class="block-color-blue_background">Azure Dev Ops</blockquote></div><div id="a0bb14f7-9b29-453c-bfa6-3c2b1ed186b7" style="width:100%" class="column"><blockquote id="e357957c-81b5-4d8a-9cc6-5de5557ac4af" class="block-color-pink_background">React JS</blockquote><blockquote id="f7d9d6be-1864-4e6a-b433-cd12f099f389" class="block-color-blue_background">NextJS</blockquote><blockquote id="648454c8-d901-4b36-be00-14f3f4106eb6" class="block-color-orange_background">Python for NLP</blockquote></div></div></div><div id="9b88eded-d313-4343-832e-3572f1744f25" style="width:25%" class="column"><p id="246479f2-3baa-4254-b8c8-9cb744ddf7a1" class="">🎯 <span style="border-bottom:0.05em solid">OBJECTIVES</span></p><p id="602d64d1-8324-4f5f-8ed5-eac288a9c8b5" class="">📙 Read books daily</p><p id="8eb10afd-7f3b-4c0b-8f9d-d3752fff9c85" class="">🥦 Eat healthy foods</p><p id="a9c1e9b9-89a8-4dfd-bda2-598f5543a4f9" class="">🥛 Drink water</p><p id="f34288bc-5988-4c71-9878-32750e5082ae" class="">💻 Work with writing and business</p><p id="9dc087ac-b589-467f-a6f7-781df05ca0b7" class="">💻 Work remotely</p><p id="54916ff8-aaea-4293-adb0-bd4c1adaf8f6" class="">
+</p><p id="80979484-2e77-4ee4-988f-1dd2df83de76" class="">
+</p><p id="9c973386-98fd-4e97-915d-005a299f6476" class="">
+</p></div></div><hr id="f375b955-79d5-490d-8be7-f48f8e94ce63"/><h2 id="d3be6439-4cdb-4513-a78b-abf56bbec284" class=""><span style="border-bottom:0.05em solid"><strong><strong>OFFERINGS TO MY CLIENTS</strong></strong></span></h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5ab61edd-ca6a-4547-b89b-ef2340ff2284"><div style="font-size:1.5em"><span class="icon">🖊️</span></div><div style="width:100%"><strong><strong>Technical Writing / Translation / Localization skills and projects</strong></strong><p id="067c0e43-6b96-4a8f-b64b-b937cddee977" class="">As a technical writer, I have experience with Jira, Scrum, VSCode, Doc as a Code, Markdown, and GitHub. I have worked as a Technical Writer and Translator for over 10 years, and I have a Bachelor of English from the Federal University of Rio Grande do Sul. I have been involved in all phases of web development, such as UML modelling, requirement gathering, MySQL database creation, front and back-end development, and interface translation and review. Additionally, I have experience in testing methodologies like integration, regression, system, user acceptance testing (UAT), and interface testing. Finally, I have experience with game development using Unity3D for Windows and mobile.</p></div></figure><p id="d1f874c3-d2c8-4275-9524-800b84bafffb" class="">
+</p><hr id="9f21c8af-020e-4319-8992-d3a222c1d4e3"/><h3 id="7bdd7dce-1dde-4963-a6b7-641208d81cda" class="">🎴 <span style="border-bottom:0.05em solid">PROJECTS IN TECHNICAL WRITING</span></h3><hr id="8e599a44-97ac-4e73-b222-5d6919ea668f"/><h3 id="abcca112-8a59-4a7d-b988-74924368b4dd" class="">All guides that I wrote in 2022 and 2023:</h3><ol type="1" id="476f4e68-42d1-4aa5-849e-95f4a33a684a" class="numbered-list" start="1"><li><a href="https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/ab-testing-marketplace/">https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/ab-testing-marketplace/</a></li></ol><ol type="1" id="356f7feb-0f05-47af-b64a-4b13cbf5017b" class="numbered-list" start="2"><li><a href="https://www.azion.com/en/documentation/products/how-to/configurations/ab-testing-marketplace/">https://www.azion.com/en/documentation/products/how-to/configurations/ab-testing-marketplace/</a></li></ol><ol type="1" id="f724518d-0c67-4644-86dc-7e0509adc2a7" class="numbered-list" start="3"><li><a href="https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/how-to-redirecionamento-massivo/">https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/how-to-redirecionamento-massivo/</a></li></ol><ol type="1" id="11826f1d-fc0f-4023-8fea-0f2a9df9bed7" class="numbered-list" start="4"><li><a href="https://www.azion.com/en/documentation/products/how-to/configurations/how-to-massive-redirection/">https://www.azion.com/en/documentation/products/how-to/configurations/how-to-massive-redirection/</a></li></ol><ol type="1" id="10dfd7ca-0e60-4eb1-9f18-e7e77dcb7990" class="numbered-list" start="5"><li><a href="https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/elasticsearch-endpoint/">https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/elasticsearch-endpoint/</a></li></ol><ol type="1" id="ec29465d-9240-4b5b-b213-b8de11bf2d9f" class="numbered-list" start="6"><li><a href="https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-elasticsearch/">https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-elasticsearch/</a></li></ol><ol type="1" id="1f83f3e5-03df-46fe-9c6d-6a399221a2e5" class="numbered-list" start="7"><li><a href="https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/azure-monitor-endpoint/">https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/azure-monitor-endpoint/</a></li></ol><ol type="1" id="48575f9d-c9fb-4452-80ea-27e6015b0e53" class="numbered-list" start="8"><li><a href="https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-azure-monitor/">https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-azure-monitor/</a></li></ol><ol type="1" id="cfdb52ee-1d3d-485f-88bc-f7ce2ac2e8e6" class="numbered-list" start="9"><li><a href="https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/azure-blob-endpoint/">https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/azure-blob-endpoint/</a></li></ol><ol type="1" id="ea8bb6ed-f12c-44f8-949d-d6985a2d7346" class="numbered-list" start="10"><li><a href="https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-azure-blob/">https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-azure-blob/</a></li></ol><ol type="1" id="0bf7f5eb-11c2-45ae-ab00-d51bdac5feae" class="numbered-list" start="11"><li><a href="https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/amazon-kinesis-endpoint/">https://www.azion.com/pt-br/documentacao/produtos/how-to/configuracoes/amazon-kinesis-endpoint/</a></li></ol><ol type="1" id="478798f2-6b0a-4cf3-943a-a89d160ca25d" class="numbered-list" start="12"><li><a href="https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-amazon-kinesis/">https://www.azion.com/en/documentation/products/how-to/configurations/endpoint-amazon-kinesis/</a></li></ol><h2 id="9f0f6803-168b-43c7-9d86-97160244d901" class=""><strong>Open source projects that I contribute</strong></h2><p id="af1bf8df-f5be-4367-963a-35f78aaa2ea3" class=""><a href="https://techscriptor-fork.vercel.app/">https://techscriptor-fork.vercel.app/</a></p><p id="323f09b9-c73d-42dd-b16e-cc0cee678ba3" class="">
+</p><hr id="dc68c4b1-24d8-4960-bb04-a53cf75665e8"/><h3 id="c20be178-c5c5-4e7b-9656-edbff9825090" class="">📑<em> What I can do?</em></h3><p id="c7403daf-6505-4f4a-89ea-8d72254f0099" class="">🏷 <strong>Translation</strong></p><p id="c385d025-748b-4c0d-a144-46ee07e68afa" class="">📚 <strong>Articles</strong></p><p id="b9092b0d-120c-4a55-8a66-3c7248e40793" class=""><strong>📝 Technical documentation</strong></p><p id="e7a7c73c-aa6c-47b5-8e99-3ecf26f363a0" class=""><strong>💻 Web development</strong></p><p id="264d7255-c125-4c27-98f6-8471448a27de" class=""><strong>💻 Localization of games in general</strong></p><p id="c4409db5-533a-49f3-a4af-7f7cb034f910" class="">
+</p></div></article></body></html>
